@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 6</title>
+</head>
+<body>
+    <?php
+
+
+$host_ip = "127.0.0.1";
+$username = "Faisal";
+$password = "1234";
+$database = "Lab_db";
+
+$conn = mysqli_connect($host_ip,$username,$password,$database);
+
+if (!$conn){
+
+    echo "Connection Failed";
+
+}
+else
+ echo "Connection Successfully";
+
+
+ echo "<br>";
+
+ $query = "INSERT INTO `Lab_06` (F_name , L_name , S_id , Major) VALUES ('Saad' , 'ahmed', 201611281 , 'SWE')";
+
+
+ if(mysqli_query($conn , $query)){
+
+    echo "New record has been added";
+ }
+ else
+ echo "Error";
+
+ mysqli_close($conn);
+?>
+</body>
+</html>
